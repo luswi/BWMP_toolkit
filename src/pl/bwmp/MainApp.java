@@ -1,6 +1,6 @@
 package pl.bwmp;
 /**
- * Created by lukas on 13.05.2017...
+ * Created by lukas on 13.05.2017.
  */
 import javafx.application.Application;
 import javafx.collections.FXCollections;
