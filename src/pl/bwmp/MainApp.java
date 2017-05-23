@@ -22,6 +22,7 @@ public class MainApp extends Application {
 
 /**
 * Data as an observable list of Projects.
+ * test
 */
 
     private ObservableList<Project> projectData = FXCollections.observableArrayList();
