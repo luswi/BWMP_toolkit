@@ -20,9 +20,10 @@ public class Project {
     private final StringProperty shipName;
     private final StringProperty shipStatus; //approval stage
     private final StringProperty LCS;
+    private final StringProperty sfaCreated;
     //private final StringProperty seq;
     //private final StringProperty flow;
-    //private final StringProperty sfaCreated;
+
     //private final StringProperty oracle;
     //private final StringProperty sfaSent;
     //private final StringProperty sfaRec;
@@ -55,8 +56,8 @@ public class Project {
         this.shipName = new SimpleStringProperty(shipName);
         this.shipStatus = new SimpleStringProperty(shipStatus);
         //Some initial dummy data for testing
-        this.LCS = new SimpleStringProperty("Tak");
-        //this.sfaCreated = new SimpleStringProperty("No");
+        this.LCS = new SimpleStringProperty("LCS - Yes/No");
+        this.sfaCreated = new SimpleStringProperty("SFA - Yes/No");
         //this.oracle = new SimpleStringProperty("No");
         //this.sfaSent = new SimpleStringProperty("No");
         //this.sfaRec = new SimpleStringProperty("No");
@@ -108,5 +109,9 @@ public class Project {
     public StringProperty LCSProperty(){
         return LCS;
     }
+
+    public String getSfaCreated() {return sfaCreated.get();}
+    public void setSfaCreated(String sfaCreated){this.sfaCreated.set(sfaCreated);}
+    public StringProperty sfaCreatedProperty() {return  sfaCreated;}
 
 }

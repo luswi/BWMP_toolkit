@@ -1,6 +1,7 @@
 package pl.bwmp.main.view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,6 +30,8 @@ public class ProjectOverviewController {
     private Label shipNameLabel;
     @FXML
     private Label LcsLabel;
+    @FXML
+    private Label sfaCreatedLabel;
 
     //Reference to main application
     private MainApp mainApp;
@@ -81,10 +84,16 @@ private void showProjectDetails(Project project){
         //fill the labels with info from the project object.
         shipIdLabel.setText(project.getShipId());
         shipNameLabel.setText(project.getShipName());
+        LcsLabel.setText(project.getLCS());
+        sfaCreatedLabel.setText(project.getSfaCreated());
+
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
         shipNameLabel.setText("");
+        LcsLabel.setText("");
+        sfaCreatedLabel.setText("");
+
 
     }
 }
