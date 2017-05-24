@@ -20,11 +20,10 @@ public class Project {
     private final StringProperty shipName;
     private final StringProperty shipStatus; //approval stage
     private final StringProperty LCS;
+    private final StringProperty seq;
+    private final StringProperty flow;
     private final StringProperty sfaCreated;
-    //private final StringProperty seq;
-    //private final StringProperty flow;
-
-    //private final StringProperty oracle;
+    private final StringProperty oracle;
     //private final StringProperty sfaSent;
     //private final StringProperty sfaRec;
     //private final StringProperty cert;
@@ -57,8 +56,10 @@ public class Project {
         this.shipStatus = new SimpleStringProperty(shipStatus);
         //Some initial dummy data for testing
         this.LCS = new SimpleStringProperty("LCS - Yes/No");
+        this.seq = new SimpleStringProperty("SEQ - Yes/No");
+        this.flow = new SimpleStringProperty("FLOW - Yes/No");
         this.sfaCreated = new SimpleStringProperty("SFA - Yes/No");
-        //this.oracle = new SimpleStringProperty("No");
+        this.oracle = new SimpleStringProperty("ORACLE - Yes/No");
         //this.sfaSent = new SimpleStringProperty("No");
         //this.sfaRec = new SimpleStringProperty("No");
         //this.cert = new SimpleStringProperty("No");
@@ -80,6 +81,8 @@ public class Project {
         return shipId;
     }
 
+
+
     public String getShipName(){
         return shipName.get();
     }
@@ -89,6 +92,8 @@ public class Project {
     public StringProperty shipNameProperty(){
         return shipName;
     }
+
+
 
     public String getShipStatus(){
         return shipStatus.get();
@@ -100,6 +105,8 @@ public class Project {
         return shipStatus;
     }
 
+
+
     public String getLCS(){
         return LCS.get();
     }
@@ -110,8 +117,49 @@ public class Project {
         return LCS;
     }
 
-    public String getSfaCreated() {return sfaCreated.get();}
-    public void setSfaCreated(String sfaCreated){this.sfaCreated.set(sfaCreated);}
-    public StringProperty sfaCreatedProperty() {return  sfaCreated;}
+
+
+    public String getSeq() {
+        return seq.get();
+    }
+    public void setSeq(String seq){
+        this.seq.set(seq);
+    }
+    public StringProperty seqProperty(){
+        return seq;
+    }
+
+
+    public String getFlow(){
+        return flow.get();
+    }
+    public void setFlow(String flow){
+        this.flow.set(flow);
+    }
+    public StringProperty flowProperty(){
+        return flow;
+    }
+
+
+    public String getSfaCreated() {
+        return sfaCreated.get();
+    }
+    public void setSfaCreated(String sfaCreated){
+        this.sfaCreated.set(sfaCreated);
+    }
+    public StringProperty sfaCreatedProperty() {
+        return  sfaCreated;
+    }
+
+
+    public String getOracle(){
+        return oracle.get();
+    }
+    public void setOracle(String oracle){
+        this.oracle.set(oracle);
+    }
+    public StringProperty oracleProperty(){
+        return oracle;
+    }
 
 }

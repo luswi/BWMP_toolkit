@@ -31,7 +31,13 @@ public class ProjectOverviewController {
     @FXML
     private Label LcsLabel;
     @FXML
+    private Label seqLabel;
+    @FXML
+    private Label flowLabel;
+    @FXML
     private Label sfaCreatedLabel;
+    @FXML
+    private Label oracleLabel;
 
     //Reference to main application
     private MainApp mainApp;
@@ -85,14 +91,20 @@ private void showProjectDetails(Project project){
         shipIdLabel.setText(project.getShipId());
         shipNameLabel.setText(project.getShipName());
         LcsLabel.setText(project.getLCS());
+        seqLabel.setText(project.getSeq());
+        flowLabel.setText(project.getFlow());
         sfaCreatedLabel.setText(project.getSfaCreated());
+        oracleLabel.setText(project.getOracle());
 
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
         shipNameLabel.setText("");
         LcsLabel.setText("");
+        seqLabel.setText("");
+        flowLabel.setText("");
         sfaCreatedLabel.setText("");
+        oracleLabel.setText("");
 
 
     }
