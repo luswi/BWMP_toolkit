@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
-
+import java.math.BigDecimal;
 
 
 /**
@@ -38,6 +38,23 @@ public class ProjectOverviewController {
     private Label sfaCreatedLabel;
     @FXML
     private Label oracleLabel;
+    @FXML
+    private Label sfaSentLabel;
+    @FXML
+    private Label sfaRecLabel;
+    @FXML
+    private Label shipStatusLabel;
+    @FXML
+    private Label certLabel;
+    @FXML
+    private Label sharePointLabel;
+    @FXML
+    private Label hUsedLabel;
+    @FXML
+    private Label hLeftLabel;
+    @FXML
+    private Label hMaxLabel;
+
 
     //Reference to main application
     private MainApp mainApp;
@@ -87,6 +104,7 @@ public void setMainApp(MainApp mainApp){
 
 private void showProjectDetails(Project project){
     if(project !=null) {
+
         //fill the labels with info from the project object.
         shipIdLabel.setText(project.getShipId());
         shipNameLabel.setText(project.getShipName());
@@ -95,7 +113,17 @@ private void showProjectDetails(Project project){
         flowLabel.setText(project.getFlow());
         sfaCreatedLabel.setText(project.getSfaCreated());
         oracleLabel.setText(project.getOracle());
+        sfaSentLabel.setText(project.getSfaSent());
+        sfaRecLabel.setText(project.getSfaRec());
+        shipStatusLabel.setText(project.getShipStatus());
+        certLabel.setText(project.getCert());
+        sharePointLabel.setText(project.getSharePoint());
+        hUsedLabel.setText(Double.toString(project.getHused())); // int to string converter
+        hLeftLabel.setText(Double.toString(project.getHmax() - project.getHused()));
 
+
+        //hMaxLabel.setText(Integer.toString(project.getHmax()));
+        hMaxLabel.setText(Double.toString(project.getHmax()));
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
@@ -105,6 +133,15 @@ private void showProjectDetails(Project project){
         flowLabel.setText("");
         sfaCreatedLabel.setText("");
         oracleLabel.setText("");
+        sfaSentLabel.setText("");
+        sfaRecLabel.setText("");
+        shipStatusLabel.setText("");
+        certLabel.setText("");
+        sharePointLabel.setText("");
+        hUsedLabel.setText("");
+        hLeftLabel.setText("");
+        hMaxLabel.setText("");
+
 
 
     }

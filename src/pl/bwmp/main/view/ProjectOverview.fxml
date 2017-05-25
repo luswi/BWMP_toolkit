@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectOverviewController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../style/modern.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectOverviewController">
    <children>
       <SplitPane dividerPositions="0.24791318864774625" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -37,7 +37,7 @@
                     <tabs>
                       <Tab text="Main  informations -&gt;">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="663.0" prefWidth="898.0">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="663.0" prefWidth="898.0" styleClass="background">
                                  <children>
                                     <GridPane layoutX="307.0" layoutY="225.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                                       <columnConstraints>
@@ -72,8 +72,8 @@
                                           <Label fx:id="flowLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                           <Label fx:id="sfaCreatedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                           <Label fx:id="oracleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                          <Label fx:id="sfaSentLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <Label fx:id="sfaRecLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                                           <Label fx:id="LcsLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                        </children>
                                     </GridPane>
@@ -100,17 +100,17 @@
                                       </rowConstraints>
                                        <children>
                                           <Label text="Approval stage" />
-                                          <Label text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="shipStatusLabel" text="Label" GridPane.columnIndex="1" />
                                           <Label text="Certificate" GridPane.rowIndex="1" />
                                           <Label text="SharePoint" GridPane.rowIndex="2" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="certLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="sharePointLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                           <Label text="h used" GridPane.rowIndex="3" />
                                           <Label text="h left" GridPane.rowIndex="4" />
                                           <Label text="h max" GridPane.rowIndex="5" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="hUsedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="hLeftLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="hMaxLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
                                  </children></AnchorPane>

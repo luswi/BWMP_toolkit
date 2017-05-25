@@ -2,12 +2,7 @@ package pl.bwmp.main.model;
 
 import java.time.LocalDate;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 /**
 * Created by lukas on 14.05.2017.
@@ -24,16 +19,16 @@ public class Project {
     private final StringProperty flow;
     private final StringProperty sfaCreated;
     private final StringProperty oracle;
-    //private final StringProperty sfaSent;
-    //private final StringProperty sfaRec;
-    //private final StringProperty cert;
-    //private final StringProperty sharePoint;
+    private final StringProperty sfaSent;
+    private final StringProperty sfaRec;
+    private final StringProperty cert;
+    private final StringProperty sharePoint;
+    private final SimpleDoubleProperty hUsed;
+    private final SimpleDoubleProperty hMax;
     //private final StringProperty invoice;
     //private final StringProperty po;
     //private final StringProperty status;
-    //private final SimpleIntegerProperty hUsed;
-    //private final StringProperty hLeft;
-    //private final StringProperty hMax;
+
 
 
 
@@ -60,14 +55,16 @@ public class Project {
         this.flow = new SimpleStringProperty("FLOW - Yes/No");
         this.sfaCreated = new SimpleStringProperty("SFA - Yes/No");
         this.oracle = new SimpleStringProperty("ORACLE - Yes/No");
-        //this.sfaSent = new SimpleStringProperty("No");
-        //this.sfaRec = new SimpleStringProperty("No");
-        //this.cert = new SimpleStringProperty("No");
-        //this.sharePoint = new SimpleStringProperty("No");
-        //this.invoice = new SimpleStringProperty("No");
-        //this.po = new SimpleStringProperty("No");
-        //this.status = new SimpleStringProperty("pre-check");
-        //this.hUsed = new SimpleIntegerProperty(0);
+        this.sfaSent = new SimpleStringProperty("SFA Sent - Yes/No");
+        this.sfaRec = new SimpleStringProperty("SFA Rec - Yes/No");
+        this.cert = new SimpleStringProperty("Certificate - Yes/No");
+        this.sharePoint = new SimpleStringProperty("SharePoint - Yes/No");
+        this.hUsed = new SimpleDoubleProperty(0.5);
+        this.hMax = new SimpleDoubleProperty(4.5);
+        //this.invoice = new SimpleStringProperty("Invoice info");
+        //this.po = new SimpleStringProperty("PO info");
+        //this.status = new SimpleStringProperty("open/close");
+
 
     }
 
@@ -161,5 +158,83 @@ public class Project {
     public StringProperty oracleProperty(){
         return oracle;
     }
+
+
+    public String getSfaSent(){
+        return sfaSent.get();
+    }
+    public void setSfaSent(String sfaSent){
+        this.sfaSent.set(sfaSent);
+    }
+    public StringProperty sfaSentProperty(){
+        return sfaSent;
+    }
+
+
+    public String getSfaRec(){
+        return sfaRec.get();
+    }
+    public void setSfaRec(String sfaRec){
+        this.sfaRec.set(sfaRec);
+    }
+    public StringProperty sfaRecProperty(){
+        return sfaRec;
+    }
+
+
+    public String getCert(){
+        return cert.get();
+    }
+    public void setCert(String cert){
+        this.cert.set(cert);
+    }
+    public StringProperty certProperty(){
+        return cert;
+    }
+
+
+    public String getSharePoint(){
+        return sharePoint.get();
+    }
+    public void setSharePoint(String sharePoint){
+        this.sharePoint.set(sharePoint);
+    }
+    public StringProperty sharePointProperty(){
+        return sharePoint;
+    }
+
+
+    public double getHused(){
+        return hUsed.get();
+    }
+    public void setHused(double hUsed){
+        this.hUsed.set(hUsed);
+    }
+    private DoubleProperty hUsedProperty(){
+        return hUsed;
+    }
+
+
+    public double getHmax(){
+        return hMax.get();
+    }
+    public void setHmax(double hMax){
+        this.hMax.set(hMax);
+    }
+    public DoubleProperty hMaxProperty(){
+        return hMax;
+    }
+
+
+
+   // public String getInvoice(){
+   //     return invoice.get();
+   // }
+   // public void setInvoice(String status){
+   //     this.invoice.set(invoice);
+   // }
+   // public StringProperty invoiceProperty(){
+   //     return invoice;
+   // }
 
 }
