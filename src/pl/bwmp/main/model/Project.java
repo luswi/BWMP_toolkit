@@ -25,8 +25,8 @@ public class Project {
     private final StringProperty sharePoint;
     private final SimpleDoubleProperty hUsed;
     private final SimpleDoubleProperty hMax;
-    //private final StringProperty invoice;
-    //private final StringProperty po;
+    private final StringProperty invoice;
+    private final StringProperty po;
     //private final StringProperty status;
 
 
@@ -61,8 +61,8 @@ public class Project {
         this.sharePoint = new SimpleStringProperty("SharePoint - Yes/No");
         this.hUsed = new SimpleDoubleProperty(0.5);
         this.hMax = new SimpleDoubleProperty(4.5);
-        //this.invoice = new SimpleStringProperty("Invoice info");
-        //this.po = new SimpleStringProperty("PO info");
+        this.invoice = new SimpleStringProperty("Invoice info");
+        this.po = new SimpleStringProperty("PO info");
         //this.status = new SimpleStringProperty("open/close");
 
 
@@ -225,16 +225,13 @@ public class Project {
         return hMax;
     }
 
+    public String getInvoice(){ return invoice.get(); }
+    public void setInvoice(String invoice){ this.invoice.set(invoice); }
+    public StringProperty invoiceProperty(){ return invoice; }
 
+    public String getPo(){ return po.get(); }
+    public void setPo(String po){ this.po.set(po); }
+    public StringProperty poProperty(){ return po; }
 
-   // public String getInvoice(){
-   //     return invoice.get();
-   // }
-   // public void setInvoice(String status){
-   //     this.invoice.set(invoice);
-   // }
-   // public StringProperty invoiceProperty(){
-   //     return invoice;
-   // }
 
 }

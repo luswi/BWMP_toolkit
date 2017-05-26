@@ -132,9 +132,9 @@
                                       </rowConstraints>
                                        <children>
                                           <Label text="Invoice Sent" />
-                                          <Label text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="invoiceLabel" text="Label" GridPane.columnIndex="1" />
                                           <Label text="PO" GridPane.rowIndex="1" />
-                                          <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="poLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                        </children>
                                     </GridPane>
                                  </children></AnchorPane>

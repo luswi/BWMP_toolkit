@@ -54,6 +54,10 @@ public class ProjectOverviewController {
     private Label hLeftLabel;
     @FXML
     private Label hMaxLabel;
+    @FXML
+    private Label invoiceLabel;
+    @FXML
+    private Label poLabel;
 
 
     //Reference to main application
@@ -120,10 +124,10 @@ private void showProjectDetails(Project project){
         sharePointLabel.setText(project.getSharePoint());
         hUsedLabel.setText(Double.toString(project.getHused())); // int to string converter
         hLeftLabel.setText(Double.toString(project.getHmax() - project.getHused()));
-
-
         //hMaxLabel.setText(Integer.toString(project.getHmax()));
         hMaxLabel.setText(Double.toString(project.getHmax()));
+        invoiceLabel.setText(project.getInvoice());
+        poLabel.setText(project.getPo());
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
@@ -141,6 +145,8 @@ private void showProjectDetails(Project project){
         hUsedLabel.setText("");
         hLeftLabel.setText("");
         hMaxLabel.setText("");
+        invoiceLabel.setText("");
+        poLabel.setText("");
 
 
 
