@@ -58,6 +58,8 @@ public class ProjectOverviewController {
     private Label invoiceLabel;
     @FXML
     private Label poLabel;
+    @FXML
+    private Label statusLabel;
 
 
     //Reference to main application
@@ -128,6 +130,7 @@ private void showProjectDetails(Project project){
         hMaxLabel.setText(Double.toString(project.getHmax()));
         invoiceLabel.setText(project.getInvoice());
         poLabel.setText(project.getPo());
+        statusLabel.setText(project.getStatus());
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
@@ -147,6 +150,7 @@ private void showProjectDetails(Project project){
         hMaxLabel.setText("");
         invoiceLabel.setText("");
         poLabel.setText("");
+        statusLabel.setText("");
 
 
 

@@ -27,7 +27,7 @@ public class Project {
     private final SimpleDoubleProperty hMax;
     private final StringProperty invoice;
     private final StringProperty po;
-    //private final StringProperty status;
+    private final StringProperty status;
 
 
 
@@ -63,7 +63,7 @@ public class Project {
         this.hMax = new SimpleDoubleProperty(4.5);
         this.invoice = new SimpleStringProperty("Invoice info");
         this.po = new SimpleStringProperty("PO info");
-        //this.status = new SimpleStringProperty("open/close");
+        this.status = new SimpleStringProperty("open/close");
 
 
     }
@@ -232,6 +232,10 @@ public class Project {
     public String getPo(){ return po.get(); }
     public void setPo(String po){ this.po.set(po); }
     public StringProperty poProperty(){ return po; }
+
+    public String getStatus(){ return status.get();}
+    public void setStatus(String status) { this.status.set(status); }
+    public StringProperty statusProperty() {return status;}
 
 
 }
