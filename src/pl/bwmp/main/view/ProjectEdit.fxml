@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectEdit">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectEdit">
    <children>
       <TabPane layoutX="200.0" layoutY="47.0" prefHeight="357.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Main Informations">
+          <Tab text="Main Informations -&gt;">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="213.0" prefWidth="280.0">
                      <children>
                         <GridPane layoutX="127.0" layoutY="114.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -41,22 +49,74 @@
                               <Label text="SFA Sent" GridPane.rowIndex="7" />
                               <Label text="Oracle" GridPane.rowIndex="6" />
                               <Label text="SFA Rec" GridPane.rowIndex="8" />
-                              <Label text="Label" GridPane.columnIndex="1" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                              <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <ComboBox fx:id="lcsCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:id="yes" fx:value="Yes" />
+                                          <String fx:id="no" fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                               <ComboBox fx:id="seqCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="yes" fx:value="Yes" />
+                                           <String fx:id="no" fx:value="No" />
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                               <ComboBox fx:id="flowCB" prefWidth="150.0" promptText="Please select" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="yes" fx:value="Yes" />
+                                           <String fx:id="no" fx:value="No" />
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                               <ComboBox fx:id="sfaCreatedCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="yes" fx:value="Yes" />
+                                           <String fx:id="no" fx:value="No" />
+                                           <String fx:id="sc" fx:value="SC" />
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                               <ComboBox fx:id="oracleCB" promptText="Please select..." prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="created" fx:value="Task created"></String>
+                                           <String fx:id="ok" fx:value="OK"></String>
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                               <ComboBox fx:id="sfaSentCB" promptText="Please select..." prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="yes" fx:value="Yes"></String>
+                                           <String fx:id="no" fx:value="No"></String>
+                                           <String fx:id="sc" fx:value="SC"></String>
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                               <ComboBox fx:id="sfaRecCB" promptText="Please select..." prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" >
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:id="yes" fx:value="Yes"></String>
+                                           <String fx:id="no" fx:value="No"></String>
+                                           <String fx:id="sc" fx:value="SC"></String>
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                              <TextField GridPane.columnIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Approval Process">
+          <Tab text="Approval Process -&gt;">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -79,7 +139,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Invoicing">
+            <Tab text="Invoicing -&gt;">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
