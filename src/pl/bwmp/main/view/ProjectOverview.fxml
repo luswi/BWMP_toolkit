@@ -169,8 +169,8 @@
                   </TabPane>
                   <ToolBar layoutX="55.0" layoutY="758.0" prefHeight="40.0" prefWidth="157.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <items>
-                      <Button mnemonicParsing="false" text="New..." />
-                        <Button mnemonicParsing="false" text="Edit" />
+                      <Button mnemonicParsing="false" onAction="#handleNewProject" text="New..." />
+                        <Button mnemonicParsing="false" onAction="#handleEditProject" text="Edit" />
                         <Button mnemonicParsing="false" text="Delete" />
                     </items>
                   </ToolBar>

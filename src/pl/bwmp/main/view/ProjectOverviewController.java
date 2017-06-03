@@ -1,10 +1,7 @@
 package pl.bwmp.main.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
@@ -156,6 +153,38 @@ private void showProjectDetails(Project project){
 
     }
 }
+/**
+ * new project
+ */
+    @FXML
+    private void handleNewProject(){
+        Project tempProject = new Project();
+        boolean okClicked = mainApp.showProjectEdit(tempProject);
+        if (okClicked){
+            mainApp.getProjectData().add(tempProject);
+        }
+    }
 
+    /**
+     * for edit
+     */
+    @FXML
+    private void handleEditProject(){
+        Project selectedProject = projectTable.getSelectionModel().getSelectedItem();
+        if (selectedProject != null){
+            boolean okClicked = mainApp.showProjectEdit(selectedProject);
+            if(okClicked){
+                showProjectDetails(selectedProject);
+            }
+        } else {
+            //nothing selected
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(mainApp.getMainWindow());
+            alert.setTitle("Nothing selected");
+            alert.setHeaderText("No project selected!");
+            alert.setContentText("please select project from the table");
+            alert.showAndWait();
+        }
+    }
 
 }

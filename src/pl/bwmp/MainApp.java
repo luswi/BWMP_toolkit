@@ -9,8 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pl.bwmp.main.model.Project;
+import pl.bwmp.main.view.ProjectEditController;
 import pl.bwmp.main.view.ProjectOverviewController;
 import java.io.IOException;
 
@@ -90,6 +92,38 @@ public class MainApp extends Application {
          e.printStackTrace();
      }
  }
+
+
+ public boolean showProjectEdit(Project project){
+     try {
+         //load fxml file and create a new stage for the popup dialog
+         FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(MainApp.class.getResource("main/view/ProjectEdit.fxml"));
+         AnchorPane page = (AnchorPane) loader.load();
+
+         //Create project edit stage
+         Stage projectEditStage = new Stage();
+         projectEditStage.setTitle("Edit project");
+         projectEditStage.initModality(Modality.WINDOW_MODAL);
+         projectEditStage.initOwner(mainWindow);
+         Scene scene = new Scene(page);
+         projectEditStage.setScene(scene);
+         //set the project into the controller.
+         ProjectEditController controller = loader.getController();
+         controller.setProjectEditStage(projectEditStage);
+         controller.setProject(project);
+
+         // show edit and wait untill the user closes it
+         projectEditStage.showAndWait();
+         return controller.isOkClicked();
+     } catch (IOException e){
+         e.printStackTrace();
+         return false;
+     }
+
+ }
+
+
 /** Returns the main stage */
  public Stage getMainWindow() {
      return mainWindow;
