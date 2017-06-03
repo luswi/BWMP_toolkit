@@ -6,6 +6,7 @@ import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 
 /**
@@ -185,6 +186,35 @@ private void showProjectDetails(Project project){
             alert.setContentText("please select project from the table");
             alert.showAndWait();
         }
+    }
+    /**
+     * deletion
+     */
+    @FXML
+    private void handleDeleteProject(){
+        int selectProjectIndex = projectTable.getSelectionModel().getSelectedIndex();
+        if (selectProjectIndex >= 0){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation...");
+            alert.setHeaderText("Want to delete?");
+            alert.setContentText("Are you sure to remove entire project Case ?");
+            Optional<ButtonType> results = alert.showAndWait();
+            if (results.get() == ButtonType.OK){
+                projectTable.getItems().remove(selectProjectIndex);
+            } else {
+
+            }
+
+
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(mainApp.getMainWindow());
+            alert.setTitle("Nothing selected");
+            alert.setHeaderText("No selected project!");
+            alert.setContentText("Please select project in the table.");
+            alert.showAndWait();
+        }
+
     }
 
 }

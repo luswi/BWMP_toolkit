@@ -6,8 +6,10 @@ import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import pl.bwmp.main.model.Project;
 import javafx.scene.control.TextField;
+import java.net.URL;
 
-import java.awt.*;
+import java.net.URL;
+
 
 /**
  * Created by lukas on 29.05.2017.
@@ -17,8 +19,10 @@ public class ProjectEditController {
 
     @FXML
     private TextField idEdit;
-    //@FXML
-    //private ComboBox<T> lcsEdit;
+    @FXML
+    private TextField shipEdit;
+    @FXML
+    private ComboBox lcsCB;
 
 
     private Stage projectEditStage;
@@ -38,7 +42,9 @@ public class ProjectEditController {
         this.project = project;
 
         idEdit.setText(project.getShipId());
-        //lcsEdit.setTooltip(project.getLCS());
+        shipEdit.setText(project.getShipName());
+        lcsCB.setValue(project.getLCS());
+
 
     }
 
@@ -50,6 +56,8 @@ public class ProjectEditController {
     private void handleOK(){
         if(isInputValid()){
             project.setShipId(idEdit.getText());
+            project.setShipName(shipEdit.getText());
+            project.setLCS((String) lcsCB.getValue());
 
             okClicked = true;
             projectEditStage.close();
@@ -59,6 +67,11 @@ public class ProjectEditController {
     @FXML
     private void handleCancel(){
         projectEditStage.close();
+    }
+    @FXML
+    private void handleOracle(){
+  //open oracle code
+
     }
 
 
@@ -82,6 +95,8 @@ public class ProjectEditController {
         }
 
     }
+
+
 
 
 

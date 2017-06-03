@@ -171,7 +171,7 @@
                     <items>
                       <Button mnemonicParsing="false" onAction="#handleNewProject" text="New..." />
                         <Button mnemonicParsing="false" onAction="#handleEditProject" text="Edit" />
-                        <Button mnemonicParsing="false" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#handleDeleteProject" text="Delete" />
                     </items>
                   </ToolBar>
                </children>
