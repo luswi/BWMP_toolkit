@@ -1,11 +1,4 @@
 # BWMP_toolkit
 
 
-                                          <ComboBox fx:id="LCS" prefWidth="150.0" promptText="Yes/No ?" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                                  <items>
-                                                      <FXCollections fx:factory="observableArrayList">
-                                                          <String fx:id="yes" fx:value="Yes" />
-                                                          <String fx:id="no" fx:value="No" />
-                                                      </FXCollections>
-                                                  </items>
-                                          </ComboBox>
+![image_04062017](https://cloud.githubusercontent.com/assets/28688554/26763376/38cfed6c-4952-11e7-93e0-3ce3f3761815.jpg)
