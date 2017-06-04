@@ -3,12 +3,13 @@ package pl.bwmp.main.view;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import pl.bwmp.main.model.Project;
 import javafx.scene.control.TextField;
-import java.net.URL;
 
-import java.net.URL;
+
 
 
 /**
@@ -23,6 +24,21 @@ public class ProjectEditController {
     private TextField shipEdit;
     @FXML
     private ComboBox lcsCB;
+    @FXML
+    private ComboBox seqCB;
+    @FXML
+    private ComboBox flowCB;
+    @FXML
+    private ComboBox sfaCreatedCB;
+    @FXML
+    private ComboBox oracleCB;
+    @FXML
+    private ComboBox sfaSentCB;
+    @FXML
+    private ComboBox sfaRecCB;
+    @FXML
+    private ImageView sfaCreatedImg;
+
 
 
     private Stage projectEditStage;
@@ -44,6 +60,22 @@ public class ProjectEditController {
         idEdit.setText(project.getShipId());
         shipEdit.setText(project.getShipName());
         lcsCB.setValue(project.getLCS());
+        seqCB.setValue(project.getSeq());
+        flowCB.setValue(project.getFlow());
+        sfaCreatedCB.setValue(project.getSfaCreated());
+        oracleCB.setValue(project.getOracle());
+        sfaSentCB.setValue(project.getSfaSent());
+        sfaRecCB.setValue(project.getSfaRec());
+
+        if(sfaCreatedCB.getValue().equals("Yes")||sfaCreatedCB.getValue().equals("SC")) {
+            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+
+
+
+
 
 
     }
@@ -58,6 +90,12 @@ public class ProjectEditController {
             project.setShipId(idEdit.getText());
             project.setShipName(shipEdit.getText());
             project.setLCS((String) lcsCB.getValue());
+            project.setSeq((String) seqCB.getValue());
+            project.setFlow((String) flowCB.getValue());
+            project.setSfaCreated((String) sfaCreatedCB.getValue());
+            project.setOracle((String) oracleCB.getValue());
+            project.setSfaSent((String) sfaSentCB.getValue());
+            project.setSfaRec((String) sfaRecCB.getValue());
 
             okClicked = true;
             projectEditStage.close();

@@ -2,11 +2,16 @@ package pl.bwmp.main.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
+import java.io.FileInputStream;
 import java.math.BigDecimal;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 
 /**
@@ -58,6 +63,16 @@ public class ProjectOverviewController {
     private Label poLabel;
     @FXML
     private Label statusLabel;
+
+    @FXML
+    private ImageView sfaCreatedImg;
+    @FXML
+    private ImageView sfaSentImg;
+    @FXML
+    private ImageView sfaRecImg;
+    @FXML
+    private ImageView oracleImg;
+
 
 
     //Reference to main application
@@ -129,6 +144,34 @@ private void showProjectDetails(Project project){
         invoiceLabel.setText(project.getInvoice());
         poLabel.setText(project.getPo());
         statusLabel.setText(project.getStatus());
+
+        if(sfaCreatedLabel.getText().contentEquals("Yes")||sfaCreatedLabel.getText().contentEquals("SC")) {
+            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(sfaSentLabel.getText().contentEquals("Yes")||sfaSentLabel.getText().contentEquals("SC")){
+            sfaSentImg.setImage((new Image("pl/bwmp/main/style/yes.png")));
+        } else {
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(sfaRecLabel.getText().contentEquals("yes")||sfaRecLabel.getText().contentEquals("SC")){
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("OK")){
+            oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+
+
+
+
+
+
+
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
