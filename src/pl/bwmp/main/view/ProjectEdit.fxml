@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import java.lang.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectEditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectEditController">
    <children>
       <TabPane layoutX="200.0" layoutY="47.0" prefHeight="357.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -103,6 +111,9 @@
                               <TextField fx:id="idEdit" GridPane.columnIndex="1" />
                               <TextField fx:id="shipEdit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <ImageView fx:id="sfaCreatedImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <ImageView fx:id="oracleImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <ImageView fx:id="sfaSentImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <ImageView fx:id="sfaRecImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                            </children>
                         </GridPane>
                      </children>
@@ -126,18 +137,39 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
                           </rowConstraints>
                            <children>
-                              <Label text="Approval stage" />
+                              <Label text="Approval stage" GridPane.rowIndex="0" />
                               <Label text="Certificate" GridPane.rowIndex="1" />
                               <Label text="SharePoint" GridPane.rowIndex="2" />
                               <Label text="Label" GridPane.rowIndex="3" />
                               <Label text="Label" GridPane.rowIndex="4" />
                               <Label text="Label" GridPane.rowIndex="5" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" />
+                               <ComboBox fx:id="statusCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:value="pre-check" />
+                                           <String fx:value="Started" />
+                                           <String fx:value="Approved" />
+                                           <String fx:value="SC" />
+                                           <String fx:value="Verification" />
+                                           <String fx:value="New Rev." />
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                              <ComboBox fx:id="certCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
                               <Button mnemonicParsing="false" onAction="#handleOracle" text="Open..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="spCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                      </children>

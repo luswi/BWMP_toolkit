@@ -38,6 +38,13 @@ public class ProjectEditController {
     private ComboBox sfaRecCB;
     @FXML
     private ImageView sfaCreatedImg;
+    @FXML
+    private ImageView oracleImg;
+    @FXML
+    private ImageView sfaSentImg;
+    @FXML
+    private ImageView sfaRecImg;
+
 
 
 
@@ -72,6 +79,22 @@ public class ProjectEditController {
         } else {
             sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
+        if(oracleCB.getValue().equals("Task created")||oracleCB.getValue().equals("OK")) {
+            oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(sfaSentCB.getValue().equals("Yes")||sfaSentCB.getValue().equals("SC")){
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(sfaRecCB.getValue().equals("Yes")||sfaRecCB.getValue().equals("SC")){
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/Yes.png"));
+        } else {
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+
 
 
 

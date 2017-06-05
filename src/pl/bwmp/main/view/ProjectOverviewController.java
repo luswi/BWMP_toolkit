@@ -67,11 +67,11 @@ public class ProjectOverviewController {
     @FXML
     private ImageView sfaCreatedImg;
     @FXML
+    private ImageView oracleImg;
+    @FXML
     private ImageView sfaSentImg;
     @FXML
     private ImageView sfaRecImg;
-    @FXML
-    private ImageView oracleImg;
 
 
 
@@ -150,21 +150,22 @@ private void showProjectDetails(Project project){
         } else {
             sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
-        if(sfaSentLabel.getText().contentEquals("Yes")||sfaSentLabel.getText().contentEquals("SC")){
-            sfaSentImg.setImage((new Image("pl/bwmp/main/style/yes.png")));
-        } else {
-            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
-        if(sfaRecLabel.getText().contentEquals("yes")||sfaRecLabel.getText().contentEquals("SC")){
-            sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
-        } else {
-            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
         if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("OK")){
             oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
         } else {
             oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
+        if(sfaSentLabel.getText().contentEquals("Yes")||sfaSentLabel.getText().contentEquals("SC")){
+            sfaSentImg.setImage((new Image("pl/bwmp/main/style/yes.png")));
+        } else {
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+        if(sfaRecLabel.getText().contentEquals("Yes")||sfaRecLabel.getText().contentEquals("SC")){
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+
 
 
 
