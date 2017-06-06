@@ -1,15 +1,19 @@
 package pl.bwmp.main.view;
 
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import pl.bwmp.main.model.Project;
 import javafx.scene.control.TextField;
 
-
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -94,10 +98,6 @@ public class ProjectEditController {
         } else {
             sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
-
-
-
-
 
 
 

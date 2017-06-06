@@ -168,7 +168,7 @@
                                       </FXCollections>
                                   </items>
                               </ComboBox>
-                              <Button mnemonicParsing="false" onAction="#handleOracle" text="Open..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" text="Open..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
                               <ComboBox fx:id="spCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
