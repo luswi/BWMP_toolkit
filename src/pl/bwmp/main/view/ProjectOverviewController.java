@@ -155,12 +155,12 @@ private void showProjectDetails(Project project){
         } else {
             sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
-        if(sfaRecLabel.getText().contentEquals("yes")||sfaRecLabel.getText().contentEquals("SC")){
+        if(sfaRecLabel.getText().contentEquals("Yes")||sfaRecLabel.getText().contentEquals("SC")){
             sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
         } else {
             sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
-        if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("OK")){
+        if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("Ok")){
             oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
         } else {
             oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));

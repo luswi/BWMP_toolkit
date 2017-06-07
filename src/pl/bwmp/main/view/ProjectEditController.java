@@ -1,7 +1,10 @@
 package pl.bwmp.main.view;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -9,7 +12,11 @@ import javafx.stage.Stage;
 import pl.bwmp.main.model.Project;
 import javafx.scene.control.TextField;
 
-
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 
 /**
@@ -38,6 +45,20 @@ public class ProjectEditController {
     private ComboBox sfaRecCB;
     @FXML
     private ImageView sfaCreatedImg;
+    @FXML
+    private ImageView oracleImg;
+    @FXML
+    private ImageView sfaSentImg;
+    @FXML
+    private ImageView sfaRecImg;
+    @FXML
+    private Button sfaCreatedButton;
+    @FXML
+    private Button oracleButton;
+    @FXML
+    private Button spButton;
+
+
 
 
 
@@ -66,15 +87,86 @@ public class ProjectEditController {
         oracleCB.setValue(project.getOracle());
         sfaSentCB.setValue(project.getSfaSent());
         sfaRecCB.setValue(project.getSfaRec());
-
+/**
+ * status img
+ */
+// for Sfa Created
         if(sfaCreatedCB.getValue().equals("Yes")||sfaCreatedCB.getValue().equals("SC")) {
             sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
         } else {
             sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
         }
 
+// for Oracle Status
+        if(oracleCB.getValue().equals("Ok")) {
+            oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            oracleImg.setImage(null);
+        }
+
+// for SFA Sent
+        if(sfaSentCB.getValue().equals("Yes")||sfaSentCB.getValue().equals("SC")) {
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
+
+// for SFA Rec
+        if(sfaRecCB.getValue().equals("Yes")||sfaRecCB.getValue().equals("SC")) {
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+        } else {
+            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+        }
 
 
+
+/**
+ * Buttons
+ */
+
+// Sfa Created button (open SFA folder)
+        sfaCreatedButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    Desktop.getDesktop().open(new File("c:\\"));
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                }
+
+
+            }
+        });
+
+// Oracle button (open oracle task/invoice SP)
+        oracleButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    Desktop.getDesktop().browse(new URI("www.onet.pl"));
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                } catch (URISyntaxException exception) {
+                    exception.printStackTrace();
+                }
+
+
+            }
+        });
+
+// Share Point button (ballast list)
+        spButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    Desktop.getDesktop().browse(new URI("www.wp.pl"));
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                } catch (URISyntaxException exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
 
 
 
@@ -106,11 +198,7 @@ public class ProjectEditController {
     private void handleCancel(){
         projectEditStage.close();
     }
-    @FXML
-    private void handleOracle(){
-  //open oracle code
 
-    }
 
 
     private boolean isInputValid(){

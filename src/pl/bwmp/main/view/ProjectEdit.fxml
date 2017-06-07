@@ -18,6 +18,7 @@
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                           </columnConstraints>
                           <rowConstraints>
@@ -37,7 +38,7 @@
                               <Label text="LCS" GridPane.rowIndex="2" />
                               <Label text="Seq" GridPane.rowIndex="3" />
                               <Label text="Flow" GridPane.rowIndex="4" />
-                              <Label text="SFA Createdl" GridPane.rowIndex="5" />
+                              <Label text="SFA Created" GridPane.rowIndex="5" />
                               <Label text="SFA Sent" GridPane.rowIndex="7" />
                               <Label text="Oracle" GridPane.rowIndex="6" />
                               <Label text="SFA Rec" GridPane.rowIndex="8" />
@@ -78,7 +79,7 @@
                                    <items>
                                        <FXCollections fx:factory="observableArrayList">
                                            <String fx:value="Task created" />
-                                           <String fx:value="OK" />
+                                           <String fx:value="Ok" />
                                        </FXCollections>
                                    </items>
                                </ComboBox>
@@ -103,6 +104,11 @@
                               <TextField fx:id="idEdit" GridPane.columnIndex="1" />
                               <TextField fx:id="shipEdit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <ImageView fx:id="sfaCreatedImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Button fx:id="oracleButton" mnemonicParsing="false" text="Open &amp; Edit..." GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Button fx:id="sfaCreatedButton" mnemonicParsing="false" text="Open SFA Folder" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <ImageView fx:id="oracleImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <ImageView fx:id="sfaSentImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <ImageView fx:id="sfaRecImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                            </children>
                         </GridPane>
                      </children>
@@ -117,6 +123,7 @@
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                           </columnConstraints>
                           <rowConstraints>
@@ -131,13 +138,40 @@
                               <Label text="Approval stage" />
                               <Label text="Certificate" GridPane.rowIndex="1" />
                               <Label text="SharePoint" GridPane.rowIndex="2" />
-                              <Label text="Label" GridPane.rowIndex="3" />
-                              <Label text="Label" GridPane.rowIndex="4" />
-                              <Label text="Label" GridPane.rowIndex="5" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ComboBox prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" />
-                              <Button mnemonicParsing="false" onAction="#handleOracle" text="Open..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="[h] used" GridPane.rowIndex="3" />
+                              <Label text="[h left]" GridPane.rowIndex="4" />
+                              <Label text="[h] max" GridPane.rowIndex="5" />
+                              <ComboBox fx:id="certCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                          <String fx:value="SC" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <ComboBox fx:id="spCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="pre-check" />
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                               <ComboBox fx:id="approvalCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1">
+                                   <items>
+                                       <FXCollections fx:factory="observableArrayList">
+                                           <String fx:value="pre-check" />
+                                           <String fx:value="Started" />
+                                           <String fx:value="Approved" />
+                                           <String fx:value="SC" />
+                                           <String fx:value="Verification" />
+                                           <String fx:value="New Rev." />
+                                       </FXCollections>
+                                   </items>
+                               </ComboBox>
+                              <Button fx:id="spButton" mnemonicParsing="false" text="Open &amp; Edit..." GridPane.columnIndex="3" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                      </children>
@@ -151,7 +185,9 @@
                         <GridPane layoutX="101.0" layoutY="176.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -159,8 +195,24 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="Label" />
-                              <Label text="Label" GridPane.columnIndex="1" />
+                              <Label text="Invoice task" />
+                              <Label text="PO" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="poCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
+                              <ComboBox fx:id="invoiceCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Yes" />
+                                          <String fx:value="No" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
                            </children>
                         </GridPane>
                      </children>
@@ -174,7 +226,7 @@
                         <GridPane layoutX="101.0" layoutY="176.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -182,8 +234,18 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label text="Label" />
-                              <Label text="Label" GridPane.columnIndex="1" />
+                              <Label text="Job Status" />
+                              <ComboBox fx:id="jobCB" prefWidth="150.0" promptText="Please select..." GridPane.columnIndex="1">
+                                  <items>
+                                      <FXCollections fx:factory="observableArrayList">
+                                          <String fx:value="Open" />
+                                          <String fx:value="Close" />
+                                          <String fx:value="On-Hold" />
+                                          <String fx:value="Piraeus" />
+                                          <String fx:value="Offshore" />
+                                      </FXCollections>
+                                  </items>
+                              </ComboBox>
                            </children>
                         </GridPane>
                      </children>
