@@ -7,11 +7,9 @@ import javafx.scene.image.ImageView;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
-import java.io.FileInputStream;
-import java.math.BigDecimal;
-import java.net.URL;
+
 import java.util.Optional;
-import java.util.ResourceBundle;
+
 
 
 /**
@@ -93,7 +91,7 @@ public class ProjectOverviewController {
 
     @FXML
     private void initialize() {
-        //initialize the project table with the two columns
+        //initialize the project table with the 3 columns
         shipIdColumn.setCellValueFactory(cellData->cellData.getValue().shipIdProperty());
         shipNameColumn.setCellValueFactory(cellData->cellData.getValue().shipNameProperty());
         shipStatusColumn.setCellValueFactory(cellData->cellData.getValue().shipStatusProperty());
