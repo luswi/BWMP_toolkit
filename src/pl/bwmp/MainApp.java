@@ -68,6 +68,7 @@ public class MainApp extends Application {
          mainLayout = (BorderPane) loader.load();
          // Show the scene containing the root layout
          Scene scene = new Scene(mainLayout);
+         mainWindow.setResizable(false);
          mainWindow.setScene(scene);
          mainWindow.show();
 
@@ -104,6 +105,7 @@ public class MainApp extends Application {
          //Create project edit stage
          Stage projectEditStage = new Stage();
          projectEditStage.setTitle("Edit project");
+         projectEditStage.setResizable(false);
          projectEditStage.initModality(Modality.WINDOW_MODAL);
          projectEditStage.initOwner(mainWindow);
          Scene scene = new Scene(page);

@@ -21,9 +21,9 @@
    <children>
       <SplitPane dividerPositions="0.24791318864774625" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="337.0">
+          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0">
                <children>
-                  <TableView fx:id="projectTable" layoutX="22.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="projectTable" layoutX="22.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="shipIdColumn" prefWidth="84.0" text="id" />
                       <TableColumn fx:id="shipNameColumn" prefWidth="166.0" text="Name" />
@@ -33,9 +33,12 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <CheckBox fx:id="openCb" layoutX="14.0" layoutY="767.0" mnemonicParsing="false" text="close" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+                  <CheckBox layoutX="111.0" layoutY="761.0" mnemonicParsing="false" text="CheckBox" AnchorPane.bottomAnchor="20.0" />
+                  <CheckBox layoutX="207.0" layoutY="761.0" mnemonicParsing="false" text="CheckBox" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="825.0">
+          <AnchorPane maxWidth="900.0" minHeight="0.0" prefHeight="798.0" prefWidth="900.0">
                <children>
                   <TabPane layoutX="307.0" layoutY="249.0" prefHeight="798.0" prefWidth="898.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>

@@ -1,13 +1,21 @@
 package pl.bwmp.main.view;
 
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
 
 
+import javax.sql.rowset.Predicate;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 
@@ -25,6 +33,11 @@ public class ProjectOverviewController {
     private TableColumn<Project, String> shipNameColumn;
     @FXML
     private TableColumn<Project, String> shipStatusColumn;
+
+    @FXML
+    private CheckBox openCb;
+
+
     @FXML
     private Label shipIdLabel;
     @FXML
@@ -111,7 +124,9 @@ public void setMainApp(MainApp mainApp){
 
     //Add observable list data to the table
     projectTable.setItems(mainApp.getProjectData());
-    }
+
+
+}
 
 /**
  * Fills all text fields to show details about the project.
@@ -165,11 +180,6 @@ private void showProjectDetails(Project project){
         }
 
 
-
-
-
-
-
     } else {
         // Project is null, remove all the text.
         shipIdLabel.setText("");
@@ -195,6 +205,7 @@ private void showProjectDetails(Project project){
 
     }
 }
+
 /**
  * new project
  */
