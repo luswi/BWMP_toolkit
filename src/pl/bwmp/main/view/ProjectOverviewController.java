@@ -114,6 +114,7 @@ public class ProjectOverviewController {
 
         // Listen for selection changes and show the project details when changed.
         projectTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showProjectDetails(newValue));
+
     }
 /**
 * Is called by the main application to give a reference back to itself.
@@ -129,7 +130,7 @@ public void setMainApp(MainApp mainApp){
 }
 
 /**
- * Fills all text fields to show details about the project.
+ * Fills all text fields to show details about the project..
  * If the specified project is null, all text fields are cleared.
  *
  */
