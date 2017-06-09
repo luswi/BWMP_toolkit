@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import pl.bwmp.MainApp;
@@ -83,6 +84,7 @@ public class ProjectOverviewController {
     private ImageView sfaRecImg;
     @FXML
     private ImageView oracleImg;
+
 
 
 
@@ -206,6 +208,30 @@ private void showProjectDetails(Project project){
 
     }
 }
+
+
+/**
+ * Find function
+ */
+
+
+
+@FXML
+public TextField findInput;
+
+@FXML
+public void findProject(){
+    findInput.textProperty().addListener(((observable, oldValue, newValue) -> {
+
+    }));
+
+
+}
+
+
+
+
+
 
 /**
  * new project
