@@ -5,8 +5,11 @@ package pl.bwmp;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -15,6 +18,7 @@ import pl.bwmp.main.model.Project;
 import pl.bwmp.main.view.ProjectEditController;
 import pl.bwmp.main.view.ProjectOverviewController;
 import java.io.IOException;
+import java.util.function.Predicate;
 
 public class MainApp extends Application {
 /** main window and main layout */
@@ -26,9 +30,11 @@ public class MainApp extends Application {
 * Data as an observable list of Projects.
 */
 
-    private ObservableList<Project> projectData = FXCollections.observableArrayList();
+    public ObservableList<Project> projectData = FXCollections.observableArrayList();
 
-/**
+
+
+    /**
 * Constructor
 */
 
@@ -45,7 +51,7 @@ public class MainApp extends Application {
 */
 
     public ObservableList<Project> getProjectData(){
-        return projectData;
+       return projectData;
     }
 
 

@@ -1,6 +1,9 @@
 package pl.bwmp.main.view;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,9 +14,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import pl.bwmp.MainApp;
 import pl.bwmp.main.model.Project;
+import java.util.function.Predicate;
 
 
-import javax.sql.rowset.Predicate;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -85,11 +89,17 @@ public class ProjectOverviewController {
     @FXML
     private ImageView oracleImg;
 
-
+    @FXML
+    private TextField findInput;
 
 
     //Reference to main application
     private MainApp mainApp;
+
+
+    public ObservableList<Project>  projectData=FXCollections.observableArrayList();
+
+
 
 /**
 * The constructor is called before the initialize() method.
@@ -116,6 +126,8 @@ public class ProjectOverviewController {
 
         // Listen for selection changes and show the project details when changed.
         projectTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showProjectDetails(newValue));
+
+
 
     }
 /**
@@ -211,26 +223,33 @@ private void showProjectDetails(Project project){
 
 
 /**
- * Find function
+ * Find project
  */
 
-
-
 @FXML
-public TextField findInput;
-
-@FXML
-public void findProject(){
-    findInput.textProperty().addListener(((observable, oldValue, newValue) -> {
-
-    }));
-
+public void findProject() {
+    shipNameColumn.setCellValueFactory(cellData->cellData.getValue().shipNameProperty());
+    shipStatusColumn.setCellValueFactory(cellData->cellData.getValue().shipStatusProperty());
+    FilteredList<Project> filteredData=new FilteredList<>(projectData,p->true);
+    findInput.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredData.setPredicate(project -> {
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+                    String lowerCaseFilter = newValue.toLowerCase();
+                    //if (project.getShipName().toLowerCase().contains(lowerCaseFilter)) {
+                    if (project.getShipName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    }
+                    return false;
+                });
+            });
+    SortedList<Project> sortedData=new SortedList<>(filteredData);
+    sortedData.comparatorProperty().bind(projectTable.comparatorProperty());
+    projectTable.setItems(sortedData);
+    //projectTable.setItems(mainApp.getProjectData());
 
 }
-
-
-
-
 
 
 /**
