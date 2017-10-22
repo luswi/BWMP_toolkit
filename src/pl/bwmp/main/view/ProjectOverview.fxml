@@ -17,182 +17,182 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../style/modern.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.bwmp.main.view.ProjectOverviewController">
-   <children>
-      <SplitPane dividerPositions="0.24791318864774625" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0">
-               <children>
-                  <TableView fx:id="projectTable" layoutX="22.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn fx:id="shipIdColumn" prefWidth="84.0" text="id" />
-                      <TableColumn fx:id="shipNameColumn" prefWidth="166.0" text="Name" />
-                        <TableColumn fx:id="shipStatusColumn" prefWidth="29.0" text="Status" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
-                  <CheckBox fx:id="openCb" layoutX="14.0" layoutY="767.0" mnemonicParsing="false" text="close" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-                  <TextField fx:id="findInput" layoutX="125.0" layoutY="757.0" onInputMethodTextChanged="#findProject" onKeyReleased="#findProject" AnchorPane.bottomAnchor="15.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane maxWidth="900.0" minHeight="0.0" prefHeight="798.0" prefWidth="900.0">
-               <children>
-                  <TabPane layoutX="307.0" layoutY="249.0" prefHeight="798.0" prefWidth="898.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <tabs>
-                      <Tab text="Main  informations -&gt;">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="663.0" prefWidth="898.0" styleClass="background">
-                                 <children>
-                                    <GridPane layoutX="307.0" layoutY="225.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <Label text="id" />
-                                          <Label fx:id="shipIdLabel" text="Label" GridPane.columnIndex="1" />
-                                          <Label text="Ship Name" GridPane.rowIndex="1" />
-                                          <Label fx:id="shipNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label text="LCS" GridPane.rowIndex="2" />
-                                          <Label text="Seq" GridPane.rowIndex="3" />
-                                          <Label text="Flow" GridPane.rowIndex="4" />
-                                          <Label text="SFA Created" GridPane.rowIndex="5" />
-                                          <Label text="Oracle task" GridPane.rowIndex="6" />
-                                          <Label text="SFA Sent" GridPane.rowIndex="7" />
-                                          <Label text="SFA Rec" GridPane.rowIndex="8" />
-                                          <Label fx:id="seqLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label fx:id="flowLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label fx:id="sfaCreatedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <Label fx:id="oracleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <Label fx:id="sfaSentLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                          <Label fx:id="sfaRecLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                          <Label fx:id="LcsLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <ImageView fx:id="sfaCreatedImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                          <ImageView fx:id="oracleImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                                          <ImageView fx:id="sfaSentImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                                          <ImageView fx:id="sfaRecImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                       </children>
-                                    </GridPane>
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </Tab>
-                      <Tab text="Approval Process -&gt;">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <GridPane layoutX="36.0" layoutY="46.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <Label text="Approval stage" />
-                                          <Label fx:id="shipStatusLabel" text="Label" GridPane.columnIndex="1" />
-                                          <Label text="Certificate" GridPane.rowIndex="1" />
-                                          <Label text="SharePoint" GridPane.rowIndex="2" />
-                                          <Label fx:id="certLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label fx:id="sharePointLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label text="h used" GridPane.rowIndex="3" />
-                                          <Label text="h left" GridPane.rowIndex="4" />
-                                          <Label text="h max" GridPane.rowIndex="5" />
-                                          <Label fx:id="hUsedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label fx:id="hLeftLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label fx:id="hMaxLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                       </children>
-                                    </GridPane>
-                                 </children></AnchorPane>
-                        </content>
-                      </Tab>
-                        <Tab text="Invoicing -&gt;">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <GridPane layoutX="226.0" layoutY="238.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <Label text="Invoice task" />
-                                          <Label fx:id="invoiceLabel" text="Label" GridPane.columnIndex="1" />
-                                          <Label text="PO" GridPane.rowIndex="1" />
-                                          <Label fx:id="poLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                       </children>
-                                    </GridPane>
-                                 </children></AnchorPane>
-                          </content>
-                        </Tab>
-                        <Tab text="Status">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <GridPane layoutX="241.0" layoutY="222.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <Label text="Job Status" />
-                                          <Label fx:id="statusLabel" text="Label" GridPane.columnIndex="1" />
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-                                       </children>
-                                    </GridPane>
-                                 </children></AnchorPane>
-                          </content>
-                        </Tab>
-                    </tabs>
-                  </TabPane>
-                  <ToolBar layoutX="55.0" layoutY="758.0" prefHeight="40.0" prefWidth="157.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#handleNewProject" text="New..." />
-                        <Button mnemonicParsing="false" onAction="#handleEditProject" text="Edit" />
-                        <Button mnemonicParsing="false" onAction="#handleDeleteProject" text="Delete" />
-                    </items>
-                  </ToolBar>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </children>
+    <children>
+        <SplitPane dividerPositions="0.24791318864774625" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0">
+                    <children>
+                        <TableView fx:id="projectTable" layoutX="22.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                                <TableColumn fx:id="shipIdColumn" prefWidth="84.0" text="id" />
+                                <TableColumn fx:id="shipNameColumn" prefWidth="166.0" text="Name" />
+                                <TableColumn fx:id="shipStatusColumn" prefWidth="29.0" text="Status" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                        <CheckBox fx:id="openCb" layoutX="14.0" layoutY="767.0" mnemonicParsing="false" text="close" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+                        <TextField fx:id="findInput" layoutX="125.0" layoutY="757.0" onKeyPressed="#findProject" AnchorPane.bottomAnchor="15.0" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxWidth="900.0" minHeight="0.0" prefHeight="798.0" prefWidth="900.0">
+                    <children>
+                        <TabPane layoutX="307.0" layoutY="249.0" prefHeight="798.0" prefWidth="898.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <tabs>
+                                <Tab text="Main  informations -&gt;">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="663.0" prefWidth="898.0" styleClass="background">
+                                            <children>
+                                                <GridPane layoutX="307.0" layoutY="225.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="id" />
+                                                        <Label fx:id="shipIdLabel" text="Label" GridPane.columnIndex="1" />
+                                                        <Label text="Ship Name" GridPane.rowIndex="1" />
+                                                        <Label fx:id="shipNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <Label text="LCS" GridPane.rowIndex="2" />
+                                                        <Label text="Seq" GridPane.rowIndex="3" />
+                                                        <Label text="Flow" GridPane.rowIndex="4" />
+                                                        <Label text="SFA Created" GridPane.rowIndex="5" />
+                                                        <Label text="Oracle task" GridPane.rowIndex="6" />
+                                                        <Label text="SFA Sent" GridPane.rowIndex="7" />
+                                                        <Label text="SFA Rec" GridPane.rowIndex="8" />
+                                                        <Label fx:id="seqLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                        <Label fx:id="flowLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                        <Label fx:id="sfaCreatedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                        <Label fx:id="oracleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                        <Label fx:id="sfaSentLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                        <Label fx:id="sfaRecLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                        <Label fx:id="LcsLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                        <ImageView fx:id="sfaCreatedImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                        <ImageView fx:id="oracleImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                        <ImageView fx:id="sfaSentImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                                        <ImageView fx:id="sfaRecImg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                    </children>
+                                                </GridPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Approval Process -&gt;">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane layoutX="36.0" layoutY="46.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="Approval stage" />
+                                                        <Label fx:id="shipStatusLabel" text="Label" GridPane.columnIndex="1" />
+                                                        <Label text="Certificate" GridPane.rowIndex="1" />
+                                                        <Label text="SharePoint" GridPane.rowIndex="2" />
+                                                        <Label fx:id="certLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <Label fx:id="sharePointLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                        <Label text="h used" GridPane.rowIndex="3" />
+                                                        <Label text="h left" GridPane.rowIndex="4" />
+                                                        <Label text="h max" GridPane.rowIndex="5" />
+                                                        <Label fx:id="hUsedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                        <Label fx:id="hLeftLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                        <Label fx:id="hMaxLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                    </children>
+                                                </GridPane>
+                                            </children></AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Invoicing -&gt;">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane layoutX="226.0" layoutY="238.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="Invoice task" />
+                                                        <Label fx:id="invoiceLabel" text="Label" GridPane.columnIndex="1" />
+                                                        <Label text="PO" GridPane.rowIndex="1" />
+                                                        <Label fx:id="poLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                    </children>
+                                                </GridPane>
+                                            </children></AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab text="Status">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <GridPane layoutX="241.0" layoutY="222.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="Job Status" />
+                                                        <Label fx:id="statusLabel" text="Label" GridPane.columnIndex="1" />
+                                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                                    </children>
+                                                </GridPane>
+                                            </children></AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                        <ToolBar layoutX="55.0" layoutY="758.0" prefHeight="40.0" prefWidth="157.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <items>
+                                <Button mnemonicParsing="false" onAction="#handleNewProject" text="New..." />
+                                <Button mnemonicParsing="false" onAction="#handleEditProject" text="Edit" />
+                                <Button mnemonicParsing="false" onAction="#handleDeleteProject" text="Delete" />
+                            </items>
+                        </ToolBar>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
 </AnchorPane>

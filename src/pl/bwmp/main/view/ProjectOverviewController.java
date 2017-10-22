@@ -26,8 +26,8 @@ import java.util.Optional;
 
 
 /**
-* Created by lukas on 14.05.2017.
-*/
+ * Created by lukas on 14.05.2017.
+ */
 
 public class ProjectOverviewController {
     @FXML
@@ -101,18 +101,18 @@ public class ProjectOverviewController {
 
 
 
-/**
-* The constructor is called before the initialize() method.
-*/
+    /**
+     * The constructor is called before the initialize() method.
+     */
 
     public ProjectOverviewController(){
 
     }
 
-/**
-* Initializes the controller class. This method is automatically called
-* after the fxml file has been loaded.
-*/
+    /**
+     * Initializes the controller class. This method is automatically called
+     * after the fxml file has been loaded.
+     */
 
     @FXML
     private void initialize() {
@@ -130,131 +130,133 @@ public class ProjectOverviewController {
 
 
     }
-/**
-* Is called by the main application to give a reference back to itself.
-*/
+    /**
+     * Is called by the main application to give a reference back to itself.
+     */
 
-public void setMainApp(MainApp mainApp){
-    this.mainApp = mainApp;
+    public void setMainApp(MainApp mainApp){
+        this.mainApp = mainApp;
 
-    //Add observable list data to the table
-    projectTable.setItems(mainApp.getProjectData());
-
-
-}
-
-/**
- * Fills all text fields to show details about the project..
- * If the specified project is null, all text fields are cleared.
- *
- */
-
-private void showProjectDetails(Project project){
-    if(project !=null) {
-
-        //fill the labels with info from the project object.
-        shipIdLabel.setText(project.getShipId());
-        shipNameLabel.setText(project.getShipName());
-        LcsLabel.setText(project.getLCS());
-        seqLabel.setText(project.getSeq());
-        flowLabel.setText(project.getFlow());
-        sfaCreatedLabel.setText(project.getSfaCreated());
-        oracleLabel.setText(project.getOracle());
-        sfaSentLabel.setText(project.getSfaSent());
-        sfaRecLabel.setText(project.getSfaRec());
-        shipStatusLabel.setText(project.getShipStatus());
-        certLabel.setText(project.getCert());
-        sharePointLabel.setText(project.getSharePoint());
-        hUsedLabel.setText(Double.toString(project.getHused())); // int to string converter
-        hLeftLabel.setText(Double.toString(project.getHmax() - project.getHused()));
-        //hMaxLabel.setText(Integer.toString(project.getHmax()));
-        hMaxLabel.setText(Double.toString(project.getHmax()));
-        invoiceLabel.setText(project.getInvoice());
-        poLabel.setText(project.getPo());
-        statusLabel.setText(project.getStatus());
-
-        if(sfaCreatedLabel.getText().contentEquals("Yes")||sfaCreatedLabel.getText().contentEquals("SC")) {
-            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
-        } else {
-            sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
-        if(sfaSentLabel.getText().contentEquals("Yes")||sfaSentLabel.getText().contentEquals("SC")){
-            sfaSentImg.setImage((new Image("pl/bwmp/main/style/yes.png")));
-        } else {
-            sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
-        if(sfaRecLabel.getText().contentEquals("Yes")||sfaRecLabel.getText().contentEquals("SC")){
-            sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
-        } else {
-            sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
-        if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("Ok")){
-            oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
-        } else {
-            oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));
-        }
-
-
-    } else {
-        // Project is null, remove all the text.
-        shipIdLabel.setText("");
-        shipNameLabel.setText("");
-        LcsLabel.setText("");
-        seqLabel.setText("");
-        flowLabel.setText("");
-        sfaCreatedLabel.setText("");
-        oracleLabel.setText("");
-        sfaSentLabel.setText("");
-        sfaRecLabel.setText("");
-        shipStatusLabel.setText("");
-        certLabel.setText("");
-        sharePointLabel.setText("");
-        hUsedLabel.setText("");
-        hLeftLabel.setText("");
-        hMaxLabel.setText("");
-        invoiceLabel.setText("");
-        poLabel.setText("");
-        statusLabel.setText("");
-
+        //Add observable list data to the table
+        projectTable.setItems(mainApp.getProjectData());
 
 
     }
-}
+
+    /**
+     * Fills all text fields to show details about the project..
+     * If the specified project is null, all text fields are cleared.
+     *
+     */
+
+    private void showProjectDetails(Project project){
+        if(project !=null) {
+
+            //fill the labels with info from the project object.
+            shipIdLabel.setText(project.getShipId());
+            shipNameLabel.setText(project.getShipName());
+            LcsLabel.setText(project.getLCS());
+            seqLabel.setText(project.getSeq());
+            flowLabel.setText(project.getFlow());
+            sfaCreatedLabel.setText(project.getSfaCreated());
+            oracleLabel.setText(project.getOracle());
+            sfaSentLabel.setText(project.getSfaSent());
+            sfaRecLabel.setText(project.getSfaRec());
+            shipStatusLabel.setText(project.getShipStatus());
+            certLabel.setText(project.getCert());
+            sharePointLabel.setText(project.getSharePoint());
+            hUsedLabel.setText(Double.toString(project.getHused())); // int to string converter
+            hLeftLabel.setText(Double.toString(project.getHmax() - project.getHused()));
+            //hMaxLabel.setText(Integer.toString(project.getHmax()));
+            hMaxLabel.setText(Double.toString(project.getHmax()));
+            invoiceLabel.setText(project.getInvoice());
+            poLabel.setText(project.getPo());
+            statusLabel.setText(project.getStatus());
+
+            if(sfaCreatedLabel.getText().contentEquals("Yes")||sfaCreatedLabel.getText().contentEquals("SC")) {
+                sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+            } else {
+                sfaCreatedImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+            }
+            if(sfaSentLabel.getText().contentEquals("Yes")||sfaSentLabel.getText().contentEquals("SC")){
+                sfaSentImg.setImage((new Image("pl/bwmp/main/style/yes.png")));
+            } else {
+                sfaSentImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+            }
+            if(sfaRecLabel.getText().contentEquals("Yes")||sfaRecLabel.getText().contentEquals("SC")){
+                sfaRecImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+            } else {
+                sfaRecImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+            }
+            if(oracleLabel.getText().contentEquals("Task created")||oracleLabel.getText().contentEquals("Ok")){
+                oracleImg.setImage(new Image("pl/bwmp/main/style/yes.png"));
+            } else {
+                oracleImg.setImage(new Image("pl/bwmp/main/style/no.png"));
+            }
 
 
-/**
- * Find project
- */
+        } else {
+            // Project is null, remove all the text.
+            shipIdLabel.setText("");
+            shipNameLabel.setText("");
+            LcsLabel.setText("");
+            seqLabel.setText("");
+            flowLabel.setText("");
+            sfaCreatedLabel.setText("");
+            oracleLabel.setText("");
+            sfaSentLabel.setText("");
+            sfaRecLabel.setText("");
+            shipStatusLabel.setText("");
+            certLabel.setText("");
+            sharePointLabel.setText("");
+            hUsedLabel.setText("");
+            hLeftLabel.setText("");
+            hMaxLabel.setText("");
+            invoiceLabel.setText("");
+            poLabel.setText("");
+            statusLabel.setText("");
 
-@FXML
-public void findProject() {
-    shipNameColumn.setCellValueFactory(cellData->cellData.getValue().shipNameProperty());
-    shipStatusColumn.setCellValueFactory(cellData->cellData.getValue().shipStatusProperty());
-    FilteredList<Project> filteredData=new FilteredList<>(projectData,p->true);
-    findInput.textProperty().addListener((observable, oldValue, newValue) -> {
-                filteredData.setPredicate(project -> {
-                    if (newValue == null || newValue.isEmpty()) {
-                        return true;
-                    }
-                    String lowerCaseFilter = newValue.toLowerCase();
-                    //if (project.getShipName().toLowerCase().contains(lowerCaseFilter)) {
-                    if (project.getShipName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                        return true;
-                    }
-                    return false;
-                });
+
+
+        }
+    }
+
+
+    /**
+     * Find project
+     */
+
+    @FXML
+    public void findProject() {
+
+
+
+       // shipNameColumn.setCellValueFactory(cellData->cellData.getValue().shipNameProperty());
+        //shipStatusColumn.setCellValueFactory(cellData->cellData.getValue().shipStatusProperty());
+        FilteredList<Project> filteredData=new FilteredList<>(projectData,p->true);
+        findInput.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(project -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (project.getShipName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
             });
-    SortedList<Project> sortedData=new SortedList<>(filteredData);
-    sortedData.comparatorProperty().bind(projectTable.comparatorProperty());
-    projectTable.setItems(sortedData);
-    //projectTable.setItems(mainApp.getProjectData());
-
-}
+        });
+        SortedList<Project> sortedData=new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(projectTable.comparatorProperty());
+        projectTable.setItems(sortedData);
 
 
-/**
- * new project
- */
+    }
+
+
+    /**
+     * new project
+     */
     @FXML
     private void handleNewProject(){
         Project tempProject = new Project();
